@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Rosa Eterna: Una Dedicatoria Especial 💖</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌹</text></svg>">
+</head>
+
+<body>
+    <audio id="ambient-audio" loop>
+        <source src="ambient_music.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div id="preloader" class="preloader">
+        <div class="loader-heart"></div>
+    </div>
+
+    <div class="aura-background"></div>
+
+    <div class="container hidden" id="main-content">
+        <div id="visual-effects-field" class="visual-effects-field"></div>
+        <div id="fairy-dust-container" class="fairy-dust-container"></div>
+
+        <main class="card anim-scale-in anim-delay-2" id="main-card">
+            <div class="heart-pulse heart-tl">💖</div>
+            <div class="heart-pulse heart-br">💖</div>
+
+            <h1 class="main-title anim-fade-in anim-delay-3">Para Mi Amor Eterno</h1>
+
+            <div class="image-center-container anim-fade-in anim-delay-4">
+                <img src="rosa_central.gif" alt="Rosa Animada" class="center-rose-img">
+                <div id="jumping-hearts-container" class="jumping-hearts-container"></div>
+            </div>
+
+            <p class="dedicatoria anim-fade-in anim-delay-5">
+                "En cada latido, en cada mirada, encuentro la magia de un amor que trasciende el tiempo. Eres mi luz, mi paz, la melodía de mi alma. Esta rosa es el reflejo de mi devoción infinita."
+            </p>
+
+            <div class="time-counter anim-fade-in anim-delay-6">
+                <p>Nuestra hermosa historia comenzó hace:</p>
+                <p id="counter-display" class="counter-display">Calculando...</p>
+            </div>
+
+            <div class="signature anim-fade-in anim-delay-7">Con todo mi corazón, [Tu Nombre]</div>
+
+            <button id="reveal-button" class="reveal-btn anim-fade-in anim-delay-8">
+                Un Mensaje Más Íntimo
+            </button>
+        </main>
+
+        <div id="secret-message" class="secret-panel hidden">
+            <p>¡Eres la razón de mi sonrisa! Cada día a tu lado es un regalo, un sueño hecho realidad. Te adoro con cada fibra de mi ser, hoy y siempre.</p>
+        </div>
+
+        <footer class="footer anim-fade-up anim-delay-9">
+            <p>Hecho con amor.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

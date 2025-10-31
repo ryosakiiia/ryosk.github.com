@@ -1,0 +1,94 @@
+    /* Variables CSS para facilitar la gestión de colores */
+
+:root {
+    --primary-color: #8B0000;
+    /* Rojo oscuro para títulos */
+    --secondary-color: #DDA0DD;
+    /* Lila suave para detalles */
+    --text-dark: #333;
+    /* Texto principal oscuro */
+    --text-light: #555;
+    /* Texto secundario más claro */
+    --background-overlay: rgba(255, 240, 245, 0.75);
+    /* Rosa muy claro para superposición */
+    --card-background: rgba(255, 255, 255, 0.98);
+    /* Fondo de tarjeta casi opaco */
+    --border-color: #FF1493;
+    /* Rosa profundo para bordes */
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    /* Sombra elegante */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-signature: 'Dancing Script', cursive;
+}
+
+body {
+    background-image: url('fondo_rosas.jpg');
+    /* Asegúrate de que esta imagen exista */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--background-overlay);
+    /* Color base + superposición */
+    background-blend-mode: overlay;
+    /* Combina la imagen con el color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    /* Espaciado general para móviles */
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Evita scroll horizontal indeseado */
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 4.5em;
+    /* Más grande y prominente */
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: var(--font-signature);
+    /* Un toque caligráfico para el subtítulo */
+    font-size: 1.8em;
+    color: var(--text-light);
+    margin-top: 0;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 60px;
+    /* Más espacio interno */
+    border-radius: 25px;
+    /* Bordes más suaves */
+    box-shadow: 0 20px 50px var(--shadow-color);
+    /* Sombra más profunda */
+    text-align: center;
+    border: 5px solid var(--border-color);
+    /* Borde vibrante */
+    position: relative;
+    overflow: hidden;
+    /* Para los pseudo-elementos */
+    transition
