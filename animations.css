@@ -1,0 +1,342 @@
+/* ==================================== */
+
+
+/* 1. Keyframes de Elementos Base y Transiciones */
+
+
+/* ==================================== */
+
+@keyframes heartBeat {
+    0%,
+    100% {
+        transform: scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fadeInMoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Clases de animación (anim-delay-x) */
+
+.anim-fade-up {
+    opacity: 0;
+    animation: fadeInMoveUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-scale-in {
+    opacity: 0;
+    animation: scaleIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.anim-delay-1 {
+    animation-delay: 0.3s;
+}
+
+.anim-delay-2 {
+    animation-delay: 0.6s;
+}
+
+.anim-delay-3 {
+    animation-delay: 0.9s;
+}
+
+.anim-delay-4 {
+    animation-delay: 1.2s;
+}
+
+.anim-delay-5 {
+    animation-delay: 1.5s;
+}
+
+.anim-delay-6 {
+    animation-delay: 1.8s;
+}
+
+.anim-delay-7 {
+    animation-delay: 2.1s;
+}
+
+.anim-delay-8 {
+    animation-delay: 2.4s;
+}
+
+.anim-delay-9 {
+    animation-delay: 2.7s;
+}
+
+.anim-delay-10 {
+    animation-delay: 3.0s;
+}
+
+
+/* ==================================== */
+
+
+/* 2. Keyframe de Borde Pulsante */
+
+
+/* ==================================== */
+
+@keyframes borderPulse {
+    0% {
+        transform: scale(1.0);
+        box-shadow: 0 0 0 0 rgba(255, 87, 51, 0.7);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 15px 5px rgba(255, 87, 51, 1);
+    }
+    100% {
+        transform: scale(1.0);
+        box-shadow: 0 0 0 0 rgba(255, 87, 51, 0.7);
+    }
+}
+
+
+/* ==================================== */
+
+
+/* 3. Keyframe de Fondo Aura/Niebla */
+
+
+/* ==================================== */
+
+@keyframes auraPulse {
+    0% {
+        background: radial-gradient(circle at 40% 60%, rgba(255, 195, 0, 0.2), rgba(255, 87, 51, 0.1), rgba(255, 255, 255, 0) 70%);
+    }
+    50% {
+        background: radial-gradient(circle at 60% 40%, rgba(255, 195, 0, 0.3), rgba(255, 87, 51, 0.15), rgba(255, 255, 255, 0) 60%);
+    }
+    100% {
+        background: radial-gradient(circle at 40% 60%, rgba(255, 195, 0, 0.2), rgba(255, 87, 51, 0.1), rgba(255, 255, 255, 0) 70%);
+    }
+}
+
+
+/* ==================================== */
+
+
+/* 4. Keyframes de Corazones 3D Flotantes */
+
+
+/* ==================================== */
+
+@keyframes heartFly {
+    0% {
+        transform: translate3d(var(--x-start), var(--y-start), var(--z-start)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(var(--scale));
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(var(--x-end), var(--y-end), var(--z-end)) rotateX(var(--r-end-x)) rotateY(var(--r-end-y)) rotateZ(var(--r-end-z)) scale(var(--scale));
+        opacity: 0;
+    }
+}
+
+.heart-3d {
+    animation-duration: var(--animation-duration);
+    animation-delay: var(--animation-delay);
+    animation: heartFly var(--animation-duration) linear var(--animation-delay) forwards, heartWiggle var(--wiggle-duration) ease-in-out infinite alternate;
+}
+
+
+/* ==================================== */
+
+
+/* 5. Keyframes de Corazones Saltones 3D */
+
+
+/* ==================================== */
+
+@keyframes heartJump {
+    0% {
+        transform: translate3d(var(--x-start), var(--y-start), var(--z-start)) scale(var(--scale-start));
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    20% {
+        opacity: 1;
+        transform: translate3d(var(--x-mid), var(--y-mid), var(--z-mid)) scale(var(--scale-mid));
+        animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+    100% {
+        transform: translate3d(var(--x-end), var(--y-end), var(--z-end)) scale(var(--scale-end));
+        opacity: 0.1;
+    }
+}
+
+.heart-saltarin {
+    animation-duration: var(--jump-duration);
+    animation-delay: var(--jump-delay);
+    animation: heartJump var(--jump-duration) forwards, heartWiggle var(--wiggle-duration) ease-in-out infinite alternate;
+}
+
+
+/* Keyframe de movimiento de giro/balanceo compartido */
+
+@keyframes heartWiggle {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    50% {
+        transform: rotateZ(10deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+
+/* ==================================== */
+
+
+/* 6. Keyframes de Estrellas Fugaces */
+
+
+/* ==================================== */
+
+@keyframes shoot {
+    0% {
+        transform: translate3d(var(--x-start), var(--y-start), var(--z-start)) rotate(var(--angle));
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(var(--x-end), var(--y-end), var(--z-end)) rotate(var(--angle));
+        opacity: 0;
+    }
+}
+
+.shooting-star {
+    animation-duration: var(--shoot-duration);
+    animation-delay: var(--shoot-delay);
+    animation: shoot var(--shoot-duration) linear var(--shoot-delay) forwards;
+}
+
+
+/* ==================================== */
+
+
+/* 7. Keyframes de Polvo de Hadas */
+
+
+/* ==================================== */
+
+@keyframes dustFade {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(var(--dx), var(--dy)) scale(0);
+        opacity: 0;
+    }
+}
+
+.fairy-dust {
+    animation: dustFade 0.7s ease-out forwards;
+}
+
+
+/* ==================================== */
+
+
+/* 8. Keyframes de Pétalos 2D */
+
+
+/* ==================================== */
+
+@keyframes fall {
+    0% {
+        transform: translate3d(0, -20vh, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(var(--x-end), 120vh, 0) rotate(var(--r-end));
+        opacity: 0.8;
+    }
+}
+
+@keyframes sway {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(var(--sway-distance));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 50% 5% 50% 5%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fall var(--fall-time) linear forwards, sway var(--sway-time) ease-in-out infinite alternate;
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    filter: blur(0.5px);
+}
+
+.petal.red {
+    background-color: #DC143C;
+}
+
+.petal.pink {
+    background-color: var(--secondary-color);
+}
+
+.petal.white {
+    background-color: rgba(255, 255, 255, 0.9);
+}
